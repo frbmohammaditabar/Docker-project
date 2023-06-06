@@ -1,0 +1,30 @@
+git clone https://github.com/softage0/algorithm-trading-webapp.git webapp
+
+
+
+docker-compose build
+
+
+
+docker-compose up
+
+
+
+###Install Glusterfs
+
+sudo apt-get update
+sudo apt-get install glusterfs-server
+
+
+sudo gluster peer probe node1
+sudo gluster peer probe node2
+sudo gluster volume create data-volume replica 2 node1:/data/myvolume node2:/data/myvolume
+sudo gluster volume start data-volume
+
+
+
+
+docker-compose up
+
+
+http://localhost:5352/
